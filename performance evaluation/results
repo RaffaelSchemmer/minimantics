@@ -1,0 +1,49 @@
+Comandos para executar o programa:
+
+#1 time ./filterRaw.sh mini.1 1 1
+#2 time ./build_profiles mini.1.s.filter.t1.c1.tc1.u > mini.1.profiles
+#3 time ./calculate_similarity -S 0.2 mini.1.profiles > mini.1.sim-th0.2
+
+|| 130MBytes entrada (mini.1) saida (mini.1.s.filter.t1.c1.tc1.u) ----------------- || Dados alocados no HDD da VM (Timing buffered disk reads:  22 MB in  3.09 seconds =   7.12 MB/sec (HDD da VM))
+
+#1 (168.552+175.967+175.967)/3
+
+173.495333333 s
+
+#2 (0.110+0.071+0.070)/3
+
+0.083666667 segundos
+
+#3 (1.533+1.546+1.620)/3
+
+1.566333333 segundos
+
+|| 108KBytes entrada (mini.1.s.filter.t1.c1.tc1.u) saida (mini.1.profiles) ----------------- || Dados alocados no HDD do SAN (Timing buffered disk reads:  28 MB in  3.04 seconds =   9.20 MB/sec (HDD do SAN))
+
+#1 (183.938+182.301+183.013)/3
+
+183.084 segundos
+
+#2 (0.095+0.071+0.073)/3 
+
+0.079666667 segundos
+
+#3 (1.579+1.475+1.469)/3 
+
+1.507666667 segundos
+
+|| 896Kbytes entrada (mini.1.profiles) saida (mini.1.sim-th0.2) 3.7MBytes ---------------- || Dados alocados no SSD da blade (Timing buffered disk reads: 288 MB in  3.08 seconds =  93.48 MB/sec (SSD da blade))
+
+#1 (166.177+167.274+165.864)/3
+
+166.438333333 segundos
+
+#2 (0.070+0.070+0.075)/3
+
+0.071666667 segundos
+
+#3 (1.482+1.478+1.493)/3
+
+1.484333333 segundos
+
+

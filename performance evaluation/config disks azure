@@ -1,0 +1,17 @@
+
+sudo fdisk /dev/sdc
+n
+p
+1
+2048
+2145386495
+w
+
+sudo mkfs -t ext4 /dev/sdc1
+sudo mkdir /smnt
+sudo mount /dev/sdc1 /smnt
+
+sudo -i blkid
+sudo nano /etc/fstab
+UUID=e307fe15-7f19-42ca-a383-70a4bce66e9b  /smnt   ext4   defaults   1   2
+
